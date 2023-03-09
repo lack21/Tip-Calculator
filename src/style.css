@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", sans-serif;
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  display: grid;
+  place-content: center;
+}
+
+.logo {
+  display: block;
+  margin: 5rem auto;
+}
+
+.container {
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.container .setup-side {
+  width: 100%;
+}
+.container .setup-side .mini-title {
+  font-size: 0.9rem;
+  color: hsl(186, 14%, 43%);
+  margin-bottom: 0.5rem;
+}
+.container .setup-side .mini-title:nth-child(3) {
+  margin-top: 2.5rem;
+}
+.container .setup-side .input-field {
+  position: relative;
+}
+.container .setup-side .input-field .input-icon {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.container .setup-side .input-field .input-text {
+  text-align: right;
+  border: none;
+  width: 100%;
+  background-color: hsla(184, 14%, 56%, 0.1);
+  color: hsl(183, 100%, 15%);
+  font-size: 1.2rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+.container .setup-side .input-field .input-text:focus {
+  outline: 0.1rem solid hsl(172, 67%, 45%);
+}
+.container .setup-side .tip-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+.container .setup-side .tip-row .tip-item,
+.container .setup-side .tip-row .custom-tip {
+  width: 100%;
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(180, 37%, 97%);
+  text-align: center;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  cursor: pointer;
+}
+.container .setup-side .tip-row .tip-item:hover,
+.container .setup-side .tip-row .custom-tip:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.container .setup-side .tip-row .tip-item.active,
+.container .setup-side .tip-row .custom-tip.active {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+.container .setup-side .tip-row .custom-tip {
+  border: none;
+  color: hsl(183, 100%, 15%);
+  text-align: right;
+  background-color: hsla(184, 14%, 56%, 0.1);
+}
+.container .setup-side .tip-row .custom-tip:focus {
+  outline: 0.1rem solid hsl(172, 67%, 45%);
+}
+.container .setup-side .tip-row .custom-tip::-moz-placeholder {
+  text-align: center;
+}
+.container .setup-side .tip-row .custom-tip::placeholder {
+  text-align: center;
+}
+.container .result-side {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: hsl(183, 100%, 15%);
+  padding: 2rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+.container .result-side .result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+}
+.container .result-side .result-row .result-name {
+  color: hsl(180, 37%, 97%);
+  font-size: 0.9rem;
+}
+.container .result-side .result-row .person {
+  font-size: 0.75rem;
+  color: hsl(184, 14%, 56%);
+}
+.container .result-side .result-row .total-amount {
+  font-size: 2rem;
+  color: hsl(172, 67%, 45%);
+}
+.container .result-side .btn {
+  margin-top: auto;
+  padding: 0.5rem;
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+  cursor: pointer;
+}
+.container .result-side .btn:hover {
+  filter: brightness(120%);
+  -webkit-filter: brightness(120%);
+}
+
+@media screen and (max-width: 778px) {
+  .container {
+    flex-direction: column;
+    width: min(450px, 95vw);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .container .result-side {
+    padding: 1.5rem;
+  }
+}/*# sourceMappingURL=style.css.map */

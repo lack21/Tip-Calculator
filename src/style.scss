@@ -1,0 +1,213 @@
+// lear
+// Tip Calculator
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", sans-serif;
+}
+
+// Colors
+$veryLightCyan: hsl(185, 41%, 84%);
+$lightCyan: hsl(172, 67%, 45%);
+$mediumCyan: hsl(183, 100%, 15%);
+$lightGray: hsl(180, 37%, 97%);
+$lightGrayishcyan: hsl(184, 14%, 56%);
+$grayishCyan: hsl(186, 14%, 43%);
+$lightColor: #fff;
+
+body {
+  background-color: $veryLightCyan;
+  display: grid;
+  place-content: center;
+}
+
+// Logo
+.logo {
+  display: block;
+  margin: 5rem auto;
+}
+
+// Container
+.container {
+  width: 750px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: $lightColor;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+
+  .setup-side {
+    width: 100%;
+
+    .mini-title {
+      font-size: 0.9rem;
+      color: $grayishCyan;
+      margin-bottom: 0.5rem;
+
+      &:nth-child(3) {
+        margin-top: 2.5rem;
+      }
+    }
+
+    .input-field {
+      position: relative;
+
+      .input-icon {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+      }
+
+      .input-text {
+        text-align: right;
+        border: none;
+        width: 100%;
+        background-color: hsla(184, 14%, 56%, 0.1);
+        color: $mediumCyan;
+        font-size: 1.2rem;
+        padding: 0.25rem;
+        border-radius: 0.25rem;
+        -webkit-border-radius: 0.25rem;
+        -moz-border-radius: 0.25rem;
+        -ms-border-radius: 0.25rem;
+        -o-border-radius: 0.25rem;
+
+        &:focus {
+          outline: 0.1rem solid $lightCyan;
+        }
+      }
+    }
+
+    .tip-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+
+      .tip-item,
+      .custom-tip {
+        width: 100%;
+        font-size: 1.3rem;
+        padding: 0.5rem;
+        background-color: $mediumCyan;
+        color: $lightGray;
+        text-align: center;
+        border-radius: 0.25rem;
+        -webkit-border-radius: 0.25rem;
+        -moz-border-radius: 0.25rem;
+        -ms-border-radius: 0.25rem;
+        -o-border-radius: 0.25rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $lightCyan;
+          color: $mediumCyan;
+        }
+
+        &.active {
+          color: $mediumCyan;
+          background-color: $lightCyan;
+          filter: brightness(110%);
+          -webkit-filter: brightness(110%);
+        }
+      }
+
+      .custom-tip {
+        border: none;
+        color: $mediumCyan;
+        text-align: right;
+        background-color: hsla(184, 14%, 56%, 0.1);
+
+        &:focus {
+          outline: 0.1rem solid $lightCyan;
+        }
+
+        &::placeholder {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .result-side {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $mediumCyan;
+    padding: 2rem;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0;
+
+      .result-name {
+        color: $lightGray;
+        font-size: 0.9rem;
+      }
+
+      .person {
+        font-size: 0.75rem;
+        color: $lightGrayishcyan;
+      }
+
+      .total-amount {
+        font-size: 2rem;
+        color: $lightCyan;
+      }
+    }
+
+    .btn {
+      margin-top: auto;
+      padding: 0.5rem;
+      background-color: $lightCyan;
+      color: $mediumCyan;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 0.25rem;
+      -webkit-border-radius: 0.25rem;
+      -moz-border-radius: 0.25rem;
+      -ms-border-radius: 0.25rem;
+      -o-border-radius: 0.25rem;
+      cursor: pointer;
+
+      &:hover {
+        filter: brightness(120%);
+        -webkit-filter: brightness(120%);
+      }
+    }
+  }
+}
+
+// For Smaller Devices
+@media screen and (max-width: 778px) {
+  .container {
+    flex-direction: column;
+    width: min(450px, 95vw);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    .result-side {
+      padding: 1.5rem;
+    }
+  }
+}
